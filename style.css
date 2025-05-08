@@ -1,0 +1,2703 @@
+@charset "UTF-8";
+
+/*!
+Theme Name: Cocoon Child
+Description: Cocoon専用の子テーマ
+Theme URI: https://wp-cocoon.com/
+Author: わいひら
+Author URI: https://nelog.jp/
+Template:   cocoon-master
+Version:    1.1.3
+*/
+
+/************************************
+** 子テーマ用のスタイルを書く
+************************************/
+/*必要ならばここにコードを書く*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ヘッダースタイル */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.header-top {
+    padding: 10px 20px;
+    background-color: #fffdfa;
+}
+
+.site-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+}
+
+/* フッター */
+.site-footer {
+  background-color: #2c3454;
+  color: #fff;
+  padding: 50px 0 0;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+/* 左側セクション */
+.footer-left {
+  width: 20%;
+  padding-right: 20px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-info {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-btn {
+  display: block;
+  background-color: #f9a825;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.footer-btn:hover {
+  background-color: #ff9234;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.footer-nav li {
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* 中央セクション */
+.footer-center {
+  width: 45%;
+  padding: 0 20px;
+}
+
+/* 右側セクション */
+.footer-right {
+  width: 35%;
+  padding-left: 20px;
+}
+
+.footer-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+/* 検索カテゴリー */
+.footer-search-group {
+  margin-bottom: 30px;
+}
+
+.search-category {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #f9a825;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* エリア検索 */
+.search-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+/* ヘッダー部分 */
+.search-header {
+  background: #f3f3f3;
+  color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.search-count {
+  font-size: 14px;
+  margin: 0;
+}
+
+#job-count {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* 検索コンテンツ */
+.search-content {
+  padding: 20px;
+}
+
+/* 検索フォーム */
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.search-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.label-icon {
+  margin-right: 6px;
+  color: #FFBD59;
+}
+
+/* 選択フィールド共通スタイル */
+.selection-field {
+  position: relative;
+  cursor: pointer;
+}
+
+.selection-display {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.selection-display:hover {
+  border-color: #FFBD59;
+}
+
+.selection-display:after {
+  content: "⌄";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #FFBD59;
+  pointer-events: none;
+}
+
+.selection-placeholder {
+  color: #999;
+}
+
+/* 特徴フィールド */
+.feature-field {
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.feature-selection-display {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.feature-selection-display:hover {
+  border-color: #FFBD59;
+}
+
+.feature-selection-display:after {
+  content: "⌄";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #FFBD59;
+  pointer-events: none;
+}
+
+.feature-placeholder {
+  color: #999;
+}
+
+.selected-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #e7f4ff;
+  border: 1px solid #cce5ff;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #FFBD59;
+}
+
+/* 検索ボタン */
+.search-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.search-button {
+  background-color: #FFBD59;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(255, 140, 0, 0.2);
+}
+
+.search-button:hover {
+  background-color: #FFBD59;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 140, 0, 0.3);
+}
+
+.detail-button {
+  background-color: transparent;
+  color: #FFBD59;
+  border: 1px solid #FFBD59;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detail-button:hover {
+  background-color: rgba(255, 165, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 詳細検索セクション */
+.detail-search-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.detail-heading-row {
+  margin-bottom: 15px;
+}
+
+.detail-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.feature-section {
+  margin-top: 20px;
+}
+
+.feature-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* モーダル関連 */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 0;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* モーダルが表示される時のスタイル（JavaScriptで.activeクラスを追加） */
+.modal-overlay.active {
+  display: flex; /* アクティブ時のみflexレイアウトを適用 */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* 横幅を800pxに拡大 */
+  max-height: 80vh;
+  margin: 60px auto 30px; /* 上部の余白を増やして下に配置 */
+  overflow: hidden;
+}
+
+.modal-panel {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 100%;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 25px; /* パディングを増やして内容に余裕を持たせる */
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+/* 選択グリッド共通スタイル */
+.area-grid,
+.prefecture-grid,
+.city-grid,
+.position-grid,
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* 列の幅を広く */
+  gap: 15px; /* 間隔を広げる */
+  margin-bottom: 20px;
+}
+
+.city-grid {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/* 特徴カテゴリー見出し */
+.feature-category-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 25px 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+
+
+/* 選択ボタン共通スタイル */
+.area-btn,
+.prefecture-btn,
+.city-btn,
+.position-btn,
+.selection-btn {
+  padding: 12px 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.area-btn:hover,
+.prefecture-btn:hover,
+.city-btn:hover,
+.position-btn:hover,
+.selection-btn:hover {
+  background-color: #fff4e5;
+  border-color: #FFBD59;
+  color: #FFBD59;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 特徴選択グリッド */
+.feature-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 列の幅を広く */
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.feature-checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.feature-checkbox-item:hover {
+  background-color: #e9f7fe;
+  border-color: #cce5ff;
+}
+
+.feature-checkbox {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* モーダルアクション */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.right-aligned {
+  justify-content: flex-end;
+}
+
+.back-btn {
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.back-btn i {
+  margin-right: 5px;
+}
+
+.back-btn:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.select-area-btn,
+.select-prefecture-btn,
+.apply-btn {
+  background-color: #FFBD59;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.select-area-btn:hover,
+.select-prefecture-btn:hover,
+.apply-btn:hover {
+  background-color: #ff8c00;
+  transform: translateY(-2px);
+}
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .modal-wrapper {
+    max-width: 95%;
+    margin: 40px auto 20px;
+  }
+	}
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .search-row {
+    flex-direction: column;
+  }
+  
+  .search-col {
+    min-width: 100%;
+  }
+  
+  .search-actions {
+    flex-direction: column;
+  }
+  
+  .feature-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-wrapper {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .area-grid,
+  .prefecture-grid,
+  .city-grid,
+  .position-grid,
+  .selection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-panel {
+  animation: slideUp 0.3s ease forwards;
+}
+
+.modal-overlay {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* リスト */
+.search-list {
+  list-style: none;
+  padding-left: 0;
+  columns: 1;
+}
+
+.search-list li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* 特徴リスト */
+.search-features {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-group {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+/* バナー */
+.footer-banners {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.footer-banner {
+  width: 23%;
+}
+
+.footer-banner img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 992px) {
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  .feature-group {
+    width: 100%;
+  }
+  
+  .footer-banners {
+    flex-wrap: wrap;
+  }
+  
+  .footer-banner {
+    width: 48%;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-banner {
+    width: 100%;
+  }
+}
+
+/* ナビゲーションスタイル */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    position: relative;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li:not(:last-child)::after {
+    content: '';
+    height: 20px;
+    width: 2px;
+    background-color: #FFA91C;
+    margin-left: 15px;
+}
+
+.main-nav a {
+    display: block;
+    padding: 20px 0;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #FF9234;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FF9234;
+    transition: width 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* ユーザーナビゲーション */
+.user-nav {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn, .register-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.login-btn {
+    color: #333;
+    margin-right: 10px;
+}
+
+.login-btn i {
+    color: #FFBD59;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.register-btn {
+    background-color: #1DD1B0;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.register-btn:hover {
+    background-color: #19C0A0;
+}
+
+/* メインコンテンツ */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* スライダースタイル */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.slide:nth-child(1) {
+    background-color: #f3f3f3;
+}
+
+.slide:nth-child(2) {
+    background-color: #e9f7ff;
+}
+
+.slide:nth-child(3) {
+    background-color: #fff5e6;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.slider-nav button {
+    background-color: rgba(255, 187, 89, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    font-size: 24px;
+}
+
+.slider-nav button:hover {
+    background-color: rgba(255, 146, 52, 0.9);
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* 共通スタイル */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/* 求人検索 */
+.job-search {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+
+.search-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 15px;
+  min-width: 200px;
+}
+
+.search-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 14px;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M0 0l6 6 6-6z" fill="%23666"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+}
+
+.search-btn {
+  padding: 12px 30px;
+  background-color: #FFBD59;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #FF9234;
+}
+
+.advanced-search {
+  width: 100%;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.toggle-advanced {
+  color: #1DD1B0;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* 職種から探す */
+.job-category {
+  padding: 60px 0;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.category-item {
+  background-color: #FFF5E6;
+  border-radius: 10px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+  width: 70px;
+  height: 70px;
+  margin: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon i {
+  font-size: 42px;
+  color: #FFBD59;
+}
+
+.category-item h3 {
+  font-size: 14px;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* 特徴から探す - スタイリング */
+.feature-search {
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tokuchou-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tokuchou-item {
+    flex: 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.tokuchou-item:hover {
+    transform: translateY(-5px);
+}
+
+.tokuchou-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.tokuchou-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.tokuchou-item:hover .tokuchou-image img {
+    transform: scale(1.05);
+}
+
+/* オーバーレイテキスト - 中央配置 */
+.tokuchou-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    width: 70%;
+    text-align: center;
+}
+
+.tokuchou-title h3 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .tokuchou-container {
+        flex-direction: column;
+    }
+    
+    .tokuchou-item {
+        margin-bottom: 20px;
+    }
+}
+   
+/* 新着求人情報 */
+.new-jobs {
+  padding: 60px 0;
+}
+
+.job-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.job-card {
+  width: 350px;
+  margin: 0 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+    transition: transform 0.3s;
+}
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.job-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #eee;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #666;
+}
+
+.job-tag {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.job-tag.new {
+  background-color: #1DD1B0;
+}
+
+.job-tag.popular {
+  background-color: #FF9234;
+}
+
+.job-tag.other {
+  background-color: #6C757D;
+}
+
+
+
+.job-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.job-info {
+  padding: 15px;
+}
+
+.job-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.job-location, .job-salary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.job-tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  background-color: #F5F5F5;
+  color: #666;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.job-footer {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.detail-btn {
+  display: inline-block;
+  background-color: #FFBD59;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.detail-btn:hover {
+  background-color: #FF9234;
+}
+
+.next-job-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next-job-btn button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 189, 89, 0.8);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.next-job-btn button:hover {
+  background-color: rgba(255, 146, 52, 0.9);
+}
+
+/* サイト案内 */
+.about-site {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-main-title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.about-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-item-title {
+  font-size: 20px;
+  color: #FF9234;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about-item-image {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.about-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-item-text {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+  .about-items {
+    flex-direction: column;
+  }
+  
+  .about-item {
+    margin-bottom: 40px;
+  }
+}
+
+/* マッチング案内 - 全幅表示 */
+.matching-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #1DD1B0;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.matching-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.matching-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.matching-desc {
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.matching-image {
+  width: 100px;
+  margin: 0 auto 15px;
+}
+
+.matching-image img {
+  width: 100%;
+}
+
+.matching-label {
+  font-size: 16px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.register-large-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #1DD1B0;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.register-large-btn:hover {
+  background-color: #FF9234;
+  color: #fff;
+}
+
+.btn-icon {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* タクソノミーページ用のスタイル */
+
+
+
+.job-search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* 左側のフィルターサイドバー */
+.filter-sidebar {
+    flex: 1;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filter-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.filter-section {
+    margin-bottom: 25px;
+}
+
+.filter-section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-item {
+    padding-left: 5px;
+}
+
+.filter-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.filter-link:hover {
+    color: #ff8c00;
+}
+
+.filter-link.current {
+    color: #ff8c00;
+    font-weight: bold;
+}
+
+/* エリアフィルター */
+.area-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.area-group {
+    margin-bottom: 10px;
+}
+
+.area-group-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.prefecture-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+.prefecture-link {
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+}
+
+.prefecture-link:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+.prefecture-link.current {
+    color: #ff8c00;
+    font-weight: bold;
+}
+
+/* 特徴フィルター */
+.feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* 右側のコンテンツ */
+.search-results-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 会員登録ページ用のCSS */
+.auth-form {
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  width: 100% !important;
+  padding: 1rem;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* 2カラムレイアウト調整 */
+@media (min-width: 769px) {
+  .registration-page .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .registration-page .col-md-8 {
+    width: 65%;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  
+  .registration-page .col-md-4 {
+    width: 35%;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+}
+
+/* レスポンシブ対応（モバイル） */
+@media (max-width: 768px) {
+  .registration-page .col-md-8,
+  .registration-page .col-md-4 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .benefits-container {
+    margin-top: 30px;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+  }
+}
+
+/* 認証コンテナ */
+.auth-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+/* ヘッダー部分 */
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.registration-free {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.auth-description {
+  color: #666;
+  font-size: 16px;
+}
+
+/* 進行状況表示 */
+.registration-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background-color: #e0e0e0;
+  color: #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.progress-step.active .step-number {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.step-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.progress-step.active .step-label {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.progress-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 0 10px;
+  position: relative;
+  top: -15px;
+}
+
+/* フォームスタイル調整 */
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="number"],
+.auth-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.auth-form input[type="submit"],
+.auth-form button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form input[type="submit"]:hover,
+.auth-form button[type="submit"]:hover {
+  background-color: #3d8b40;
+}
+
+.benefits-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+
+.benefits-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.benefits-title:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #4CAF50;
+  margin: 10px auto;
+}
+
+.benefits-list {
+  margin-bottom: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.benefit-icon i {
+  color: #4CAF50;
+  font-size: 20px;
+}
+
+.benefit-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.benefit-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.privacy-note {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.privacy-note i {
+  font-size: 24px;
+  color: #6c757d;
+  margin-right: 15px;
+}
+
+.privacy-note p {
+  font-size: 13px;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.privacy-note a {
+  color: #FFBD59;
+  text-decoration: underline;
+}
+
+.auth-footer {
+  text-align: center !important;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.login-link {
+  color: #1DD1B0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+#wpmem_reg {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#wpmem_reg fieldset {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  border: none;
+}
+
+#wpmem_reg label {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding-left: 0;
+}
+
+#wpmem_reg label .req {
+  margin-left: 3px;
+  color: red;
+}
+
+#wpmem_reg .div_text, 
+#wpmem_reg .div_select, 
+#wpmem_reg .div_number {
+  width: 100%;
+  margin: 0 auto 20px;
+  text-align: left;
+  padding: 0;
+}
+
+#wpmem_reg input.textbox,
+#wpmem_reg select.dropdown {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+#wpmem_reg .button_div {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#wpmem_reg .button_div input.buttons {
+  margin: 0 auto;
+  display: inline-block;
+  min-width: 200px;
+}
+
+#wpmem_reg .req-text {
+  text-align: right;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+#wpmem_reg fieldset legend {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+#wpmem_reg p img {
+  display: block;
+  margin: 0 auto;
+}
+
+#wpmem_reg p label[for="siteguard_captcha"] {
+  text-align: center;
+  margin: 10px auto;
+}
+
+#siteguard_captcha {
+  display: block;
+  margin: 10px auto;
+  max-width: 200px;
+}
+
+.buttons, 
+.button_div input[type="submit"] {
+  background-color: #FFBD59 !important;
+  border-color: #FFBD59 !important;
+  color: #fff !important;
+}
+
+.fa {
+  color: #FFBD59 !important;
+}
+
+.registration-free {
+  background-color: #FFBD59 !important;
+  color: #fff !important;
+}
+
+.progress-step.active {
+  border-color: #FFBD59 !important;
+}
+
+.progress-line {
+  background-color: #FFBD59 !important;
+}
+
+.buttons:hover,
+.button_div input[type="submit"]:hover {
+  background-color: #e5a94f !important;
+  border-color: #e5a94f !important;
+}
+
+.req {
+  color: #FFBD59 !important;
+}
+
+input:focus, select:focus {
+  border-color: #FFBD59 !important;
+  box-shadow: 0 0 5px rgba(255, 189, 89, 0.5) !important;
+}
+
+.benefit-icon {
+  background-color: #FFF5E6 !important;
+}
+
+.progress-step.active .step-number {
+    background-color: #1DD1B0;
+}
+
+.progress-step.active .step-label {
+    color: #1DD1B0;
+}
+
+.benefits-title:after {
+    background-color: #FFBD59 !important;
+}
+
+main.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.login-page .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+main.login-page .auth-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  max-width: 600px;
+}
+
+main.login-page .auth-container .auth-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main.login-page .auth-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main.login-page .auth-container fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+main.login-page .auth-container label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+main.login-page .auth-container .div_text {
+  margin-bottom: 15px;
+}
+
+main.login-page .auth-container input[type="text"],
+main.login-page .auth-container input[type="password"],
+main.login-page .auth-container input[type="email"]
+{
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+main.login-page .auth-container .button_div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main.login-page .auth-container .button_div input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+main.login-page .auth-container .button_div label[for="rememberme"] {
+   width: auto;
+   margin-right: auto;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+main.login-page .auth-container .button_div input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+main.login-page .auth-container .link-text {
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+main.login-page .auth-container .link-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+main.login-page .auth-container .link-text a:hover {
+  text-decoration: underline;
+}
+
+main.login-page .auth-container p img {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+main.login-page .auth-container p label[for="siteguard_captcha"] {
+  margin-top: 5px;
+  display: block;
+  text-align: center;
+}
+main.login-page .auth-container input#siteguard_captcha {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+legend {
+  display: none;
+}
+
+#wpmem_reg fieldset legend {
+  display: none;
+}
+
+.wpmem_msg {
+  padding: 15px 20px !important;
+  margin: 20px 0 !important;
+  background-color: #e6ffed !important;
+  border: 1px solid #b7ebc9 !important;
+  color: #0f5132 !important;
+  border-radius: 5px !important;
+  text-align: left !important;
+  line-height: 1.6 !important;
+  font-size: 0.95em !important;
+  width: 100% !important;
+}
+
+#wpmem_msg {
+    padding: 15px 20px !important;
+    margin: 20px 0 !important;
+    background-color: #e6ffed !important;
+    border: 1px solid #b7ebc9 !important;
+    color: #0f5132 !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+    line-height: 1.6 !important;
+    font-size: 0.95em !important;
+
+}
+
+#wpmem_msg br + br,
+.wpmem_msg br + br {
+  margin-top: 5px !important;
+  display: block !important;
+  content: "" !important;
+}
+
+/* ページID 253 (/instructor-login/) だけで .link-text を非表示 */
+body.page-id-253 .link-text {
+  display: none !important;
+}
+
+/* === こどもプラスについて === */
+.main-visual {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 170px 0;
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  background-image: url('https://testjc-fc.kphd-portal.net/wp-content/themes/cocoon-child-master/img/kodomoplusabut.jpeg');
+  background-size: cover;
+  background-position: center center;
+  margin-top: 0 !important;
+}
+
+.main-visual > img {
+  display: none;
+}
+
+.main-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+
+.main-visual .container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 1px;
+}
+
+.main-visual-content {
+  max-width: 700px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-left: -110px;
+  position: relative;
+  top: 100px;
+}
+
+.main-visual-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 0.6em;
+  color: #333;
+}
+
+.main-visual-text {
+  font-size: 0.9em;
+  line-height: 1.7;
+  margin: 0;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .main-visual {
+    padding: 110px 0;
+    /*
+    width: auto;
+    left: auto;
+    margin-left: auto;
+    */
+  }
+
+  .main-visual .container {
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .main-visual-content {
+    text-align: center;
+    max-width: 90%;
+    padding: 20px 25px;
+    margin-left: 0;
+    position: static;
+  }
+
+  .main-visual-title {
+    font-size: 1.9em;
+  }
+
+  .main-visual-text {
+    font-size: 0.95em;
+  }
+}
+
+header {
+  margin-bottom: 0 !important;
+}
+#content, main#main, div#content-in {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+/* 全国展開セクション */
+.nationwide {
+  padding: 80px 0;
+}
+
+.nationwide .container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px 50px;
+  align-items: center;
+}
+
+.japan-map {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  max-width: 500px;
+  margin: 0;
+  align-self: center;
+}
+
+.japan-map img {
+  width: 100%;
+  height: auto;
+}
+
+.nationwide-title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  font-size: 32px;
+  margin-bottom: 0;
+  text-align: center;
+  align-self: end;
+}
+
+.nationwide-number {
+  font-size: 40px;
+  font-weight: bold;
+  color: #f39800;
+  margin: 0 5px;
+}
+
+.nationwide-text {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.8;
+  align-self: start;
+}
+
+@media (max-width: 768px) {
+  .nationwide .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+  }
+
+  .japan-map,
+  .nationwide-title,
+  .nationwide-text {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    align-self: auto;
+    text-align: center; /* スマホではタイトルもテキストも中央揃え */
+  }
+
+  .nationwide-title {
+    margin-bottom: 20px;
+    order: 1;
+  }
+  .japan-map {
+     margin: 20px 0;
+     order: 2;
+     max-width: 300px;
+  }
+   .nationwide-text {
+     max-width: 600px;
+     /* text-align: left; */ /* スマホでも左揃えにする場合 */
+     margin: 0 auto;
+     order: 3;
+   }
+}
+    
+/* 特徴セクション */
+.features {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #f39800;
+  margin: 15px auto 0;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.feature-card {
+  flex-basis: 31%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 120px;
+  height: 120px;
+  background-color: #fff4e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto 30px;
+  order: 2;
+}
+
+.feature-icon svg {
+  width: 60px;
+  height: 60px;
+  fill: #f39800;
+}
+
+.feature-icon i {
+  font-size: 55px;
+  color: #f39800;
+}
+
+.feature-title {
+  font-size: 18px;
+  margin-bottom: 0;
+  order: 1;
+  text-align: center;
+}
+
+.feature-text {
+  font-size: 16px;
+  text-align: left;
+  order: 3;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+    .features-grid {
+        gap: 3%;
+    }
+    .feature-card {
+        flex-basis: 47%;
+    }
+}
+@media (max-width: 768px) {
+    .features-grid {
+        gap: 0;
+    }
+    .feature-card {
+        flex-basis: 100%;
+    }
+    .feature-icon {
+         width: 100px;
+         height: 100px;
+         margin-bottom: 25px;
+    }
+     .feature-icon svg {
+         width: 50px;
+         height: 50px;
+     }
+      .feature-icon i {
+         font-size: 45px;
+     }
+}
+    
+    /* スタッフの声セクション */
+    .staff-voices {
+      padding: 80px 0;
+    }
+    
+    .voices-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .voice-card {
+      width: 31%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .staff-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .staff-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      margin-right: 15px;
+    }
+    
+    .staff-name {
+      font-weight: bold;
+    }
+    
+    .staff-role {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .voice-text {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      color: #f39800;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    .read-more:after {
+      content: "→";
+      margin-left: 5px;
+    }
+    
+    /* 支援・研修制度セクション */
+    .support-system {
+      background-color: #fafafa;
+      padding: 80px 0;
+    }
+    
+    .support-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .support-item {
+      width: 23%;
+      margin-bottom: 30px;
+    }
+    
+    .support-image {
+      width: 100%;
+      height: 160px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    
+    .support-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .support-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .support-text {
+      font-size: 14px;
+    }
+    
+    /* 働く環境・待遇セクション */
+    .working-conditions {
+      padding: 80px 0;
+    }
+    
+    .conditions-intro {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 15px;
+    }
+    
+    .conditions-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .condition-item {
+      width: 48%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .condition-icon {
+      margin-right: 15px;
+      color: #f39800;
+      font-size: 24px;
+    }
+    
+    .condition-text {
+      font-size: 15px;
+    }
+    
+    /* 募集セクション */
+    .recruitment {
+      background-color: #fff8eb;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .recruitment-title {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    
+    .recruitment-text {
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    
+    .apply-button {
+      display: inline-block;
+      background-color: #14b789;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 50px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .apply-button:hover {
+      background-color: #109d75;
+    }
+    
+    @media (max-width: 768px) {
+      .feature-card, .voice-card {
+        width: 100%;
+      }
+      
+      .support-item {
+        width: 48%;
+      }
+      
+      .condition-item {
+        width: 100%;
+      }
+    }
+
+
